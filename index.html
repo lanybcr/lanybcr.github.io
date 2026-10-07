@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alany Cruz — Analista de Dados</title>
+<meta name="description" content="Alany Cruz, arquiteta e urbanista que virou analista de dados. Dashboards e análises com Python, Pandas e Power BI.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Alany Cruz — Analista de Dados">
+<meta property="og:description" content="Arquiteta e urbanista que virou analista de dados. Dashboards e análises com Python, Pandas e Power BI.">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1117'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%237cb7ff'%3EAC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #0d1117;
+  --surface: #151b23;
+  --tint: #121c2a;
+  --text: #e6edf3;
+  --muted: #b6c0cd;
+  --border: #263040;
+  --accent: #7cb7ff;
+  --accent-soft: rgba(124,183,255,.13);
+  --accent-contrast: #0d1117;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  --max: 1040px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+header.top {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(13,17,23,.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: -0.01em; }
+nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+nav a { color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500; }
+nav a:hover { color: var(--text); }
+
+/* Sections */
+section { padding: 88px 0; border-bottom: 1px solid var(--border); }
+section:last-of-type { border-bottom: 0; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.1rem); font-weight: 700; margin-bottom: 32px; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+p { margin: 0 0 1em; }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 640px; }
+
+/* Hero */
+.hero {
+  position: relative; overflow: hidden;
+  padding: 104px 0 96px;
+  background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(380px circle at var(--mx, 70%) var(--my, 30%), var(--accent-soft), transparent 70%);
+  transition: background .1s linear;
+}
+.hero .wrap { position: relative; }
+.eyebrow.type { font-family: var(--mono); text-transform: none; letter-spacing: 0; font-size: 15px; min-height: 1.6em; }
+.eyebrow.type::after { content: "▍"; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+#progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); z-index: 20; }
+nav a.active { color: var(--accent); }
+.tags li { transition: transform .2s ease, border-color .2s ease, color .2s ease; }
+.tags li:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent); }
+.in .tags li, .card.in .tags li { animation: pop .45s ease both; }
+.tags li:nth-child(2) { animation-delay: .06s; } .tags li:nth-child(3) { animation-delay: .12s; } .tags li:nth-child(4) { animation-delay: .18s; }
+@keyframes pop { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+.hero .wrap > * { animation: rise .7s ease both; }
+.hero .wrap > :nth-child(2) { animation-delay: .08s; }
+.hero .wrap > :nth-child(3) { animation-delay: .16s; }
+.hero .wrap > :nth-child(4) { animation-delay: .24s; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.hero h1 { margin-bottom: 20px; }
+.hero .lead { margin-bottom: 36px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-block; padding: 12px 22px; border-radius: 8px;
+  font-weight: 600; font-size: 15px; text-decoration: none;
+  border: 1px solid var(--border); color: var(--text);
+}
+.btn { transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.btn:hover { background: var(--surface); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(124,183,255,.2); border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
+.btn.primary:hover { filter: brightness(1.08); background: var(--accent); }
+.hero h1 { background: linear-gradient(90deg, var(--text), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* About */
+.about { display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; }
+.photo { display: block; width: 100%; max-width: 280px; aspect-ratio: 4 / 3; height: auto; border-radius: 24px; object-fit: cover; border: 1px solid var(--border); margin-bottom: 28px; }
+.shot { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; margin-top: 14px; border-radius: 10px; border: 1px solid var(--border); }
+.facts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.facts li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 15px; }
+.facts span:first-child { color: var(--muted); }
+.facts span:last-child { font-weight: 600; text-align: right; }
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; transition: transform .25s ease, box-shadow .25s ease; }
+.card:nth-child(even) { background: var(--tint); }
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,.35); border-color: var(--accent); }
+.card h3 { margin-bottom: 12px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.tags li { font-size: 14px; padding: 4px 12px; border: 1px solid var(--border); background: var(--bg); border-radius: 999px; }
+
+/* Projects */
+.projects { display: grid; gap: 24px; }
+.project { display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px; padding: 28px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.project:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.35); border-color: var(--accent); }
+.project .meta { color: var(--muted); font-size: 14px; }
+.project h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.project p { color: var(--muted); }
+.project .results { color: var(--text); font-weight: 500; }
+.project .links { display: flex; gap: 20px; margin-top: 8px; font-weight: 600; font-size: 15px; }
+
+/* Experience */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline li { display: grid; grid-template-columns: 180px 1fr; gap: 32px; padding: 24px 0; border-top: 1px solid var(--border); }
+.timeline li:last-child { border-bottom: 1px solid var(--border); }
+.timeline .when { color: var(--muted); font-size: 15px; }
+.timeline p { color: var(--muted); margin: 6px 0 0; }
+
+/* Contact */
+.contact p { max-width: 560px; color: var(--muted); font-size: 1.1rem; }
+footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); }
+
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  section { padding: 64px 0; }
+  .hero { padding: 64px 0; }
+  .about, .project, .timeline li { grid-template-columns: 1fr; gap: 16px; }
+  nav ul { gap: 16px; }
+  nav a { font-size: 14px; }
+  .brand { display: none; }
+  header.top .wrap { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Alany Cruz</a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="inicio" class="hero">
+    <div class="wrap">
+      <p class="eyebrow type" data-text="> analista_de_dados.run()">Analista de Dados</p>
+      <h1>Alany Cruz</h1>
+      <p class="lead">Arquiteta e urbanista que virou analista de dados. Transformo bases reais em dashboards claros para quem precisa tomar decisões.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projetos">Ver projetos</a>
+        <a class="btn" href="assets/curriculo-alany-cruz.pdf" download>Currículo PT</a>
+        <a class="btn" href="assets/resume-alany-cruz-en.pdf" download>Resume EN</a>
+        <a class="btn" href="#contato">Entrar em contato</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="wrap">
+      <p class="eyebrow">Sobre</p>
+      <h2>Quem sou eu</h2>
+      <div class="about">
+        <div>
+          <p>Sou arquiteta e urbanista e tecnóloga em Análise e Desenvolvimento de Sistemas, e direciono minha carreira para análise de dados. Minha formação me deu um olhar para território, cidade e comportamento das pessoas, e o UX me ensinou a transformar números em algo que quem decide consegue entender.</p>
+          <p>Uso Python (Pandas) para tratar e analisar bases reais e construo dashboards de ponta a ponta, documentando o método para que cada ajuste nos dados seja rastreável.</p>
+        </div>
+        <div>
+          <img class="photo" src="assets/foto.jpg" alt="Foto de Alany Cruz" width="280" height="210">
+          <ul class="facts">
+            <li><span>Foco</span><span>Análise de dados</span></li>
+            <li><span>Localização</span><span>Campinas, SP</span></li>
+            <li><span>Idiomas</span><span>Português, Inglês básico</span></li>
+            <li><span>Formação</span><span>ADS e Arquitetura</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="wrap">
+      <p class="eyebrow">Habilidades</p>
+      <h2>Ferramentas e competências</h2>
+      <div class="skills">
+        <div class="card">
+          <h3>Análise e linguagens</h3>
+          <ul class="tags"><li>Python</li><li>Pandas</li><li>MySQL</li><li>Jupyter</li></ul>
+        </div>
+        <div class="card">
+          <h3>Visualização</h3>
+          <ul class="tags"><li>Power BI</li><li>Matplotlib</li><li>Dashboards em HTML</li></ul>
+        </div>
+        <div class="card">
+          <h3>Tratamento de dados</h3>
+          <ul class="tags"><li>Limpeza</li><li>Deflação pelo IPCA</li><li>Dados do IBGE</li></ul>
+        </div>
+        <div class="card">
+          <h3>Desenvolvimento web</h3>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Vercel</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="wrap">
+      <p class="eyebrow">Projetos</p>
+      <h2>Trabalhos selecionados</h2>
+      <div class="projects">
+        <article class="project">
+          <div class="meta">2026 · Python, Pandas, HTML
+            <img class="shot" src="assets/agro-preview.png" alt="Prévia do dashboard do agro no Pará" loading="lazy">
+          </div>
+          <div>
+            <h3>Análise do agro no Pará</h3>
+            <p><strong>Problema:</strong> entender a evolução da produção agrícola paraense entre 2016 e 2025 com base nos dados do IBGE.</p>
+            <p class="results"><strong>Resultado:</strong> dashboard com 44 culturas e 143 municípios, com valores deflacionados pelo IPCA para comparação justa entre os anos.</p>
+            <div class="links"><a href="https://lanybcr.github.io/Analise-de-dados-sobre-o-agro-no-estado-do-Para-/" target="_blank" rel="noopener">Ver projeto</a><a href="https://github.com/lanybcr/Analise-de-dados-sobre-o-agro-no-estado-do-Para-" target="_blank" rel="noopener">Código</a></div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="meta">2026 · Python, MySQL, Power BI
+            <img class="shot" src="assets/zoop-preview.png" alt="Prévia do dashboard da Zoop Megastore no Power BI" loading="lazy">
+          </div>
+          <div>
+            <h3>Zoop Megastore: vendas de e-commerce</h3>
+            <p><strong>Problema:</strong> transformar os dados brutos de vendas de um e-commerce em informação útil para a gestão.</p>
+            <p class="results"><strong>Resultado:</strong> fluxo completo do CSV ao dashboard estratégico, passando por tratamento em Python, banco MySQL e Power BI.</p>
+            <div class="links"><a href="https://github.com/lanybcr/zoop-megastore-analise" target="_blank" rel="noopener">Código</a></div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="meta">2026 · HTML
+            <img class="shot" src="assets/aurora-preview.png" alt="Prévia do painel da Distribuidora Aurora" loading="lazy">
+          </div>
+          <div>
+            <h3>Dashboard Distribuidora Aurora</h3>
+            <p><strong>Problema:</strong> controlar e analisar os recebimentos do 1º semestre de 2026 de uma distribuidora, a partir de planilhas e comprovantes dispersos.</p>
+            <p class="results"><strong>Resultado:</strong> painel interativo com filtros por região e categoria. Mostrou R$ 4,2 milhões recebidos, com 3 clientes respondendo por 65,8% do total, um risco de concentração para a empresa.</p>
+            <div class="links"><a href="https://github.com/lanybcr/Dashboard-Distribuidora-Aurora" target="_blank" rel="noopener">Código</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacao">
+    <div class="wrap">
+      <p class="eyebrow">Formação</p>
+      <h2>Trajetória acadêmica</h2>
+      <ul class="timeline">
+        <li>
+          <div class="when">2024 — 2026</div>
+          <div><h3>Análise e Desenvolvimento de Sistemas · Estácio</h3><p>Tecnologia, programação e desenvolvimento de sistemas.</p></div>
+        </li>
+        <li>
+          <div class="when">2022</div>
+          <div><h3>UX Design · Alura</h3><p>Design de experiência do usuário. Certificados em acessibilidade web, usabilidade mobile e JavaScript.</p></div>
+        </li>
+        <li>
+          <div class="when">2016 — 2020</div>
+          <div><h3>Arquitetura e Urbanismo · Universidade da Amazônia</h3><p>Bacharelado. Base do meu olhar para território, cidade e comportamento das pessoas.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contato</p>
+      <h2>Vamos conversar</h2>
+      <p>Aberta a oportunidades e projetos. Me escreva e respondo o mais rápido possível.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:lanybcr@gmail.com">lanybcr@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/alanycruz-1a3837191" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/lanybcr" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Alany Cruz</div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Digitação no topo do hero
+  var t = document.querySelector('.type');
+  if (t && !reduce) {
+    var txt = t.getAttribute('data-text'), i = 0;
+    t.textContent = '';
+    (function tick() { t.textContent = txt.slice(0, ++i); if (i < txt.length) setTimeout(tick, 55); })();
+  } else if (t) { t.textContent = t.getAttribute('data-text'); }
+
+  // Brilho que segue o mouse no hero
+  var hero = document.querySelector('.hero');
+  if (hero && !reduce) {
+    hero.addEventListener('mousemove', function (e) {
+      var r = hero.getBoundingClientRect();
+      hero.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      hero.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  }
+
+  // Barra de progresso e link ativo no menu
+  var bar = document.getElementById('progress');
+  var links = [].slice.call(document.querySelectorAll('nav a'));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function onScroll() {
+    var h = document.documentElement;
+    bar.style.transform = 'scaleX(' + (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) + ')';
+    var cur = -1;
+    secs.forEach(function (s, k) { if (s && s.getBoundingClientRect().top < 140) cur = k; });
+    links.forEach(function (a, k) { a.classList.toggle('active', k === cur); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var els = document.querySelectorAll('section:not(.hero) .wrap > *, .card, .project, .timeline li');
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
+})();
+</script>
+</body>
+</html>
