@@ -421,7 +421,7 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
       <div class="kpis">
         <div class="kpi"><b>R$ <span data-n="38.4" data-d="1">38,4</span> bi</b><small>em produção agrícola analisada (Pará, 2025)</small></div>
         <div class="kpi"><b><span data-n="65.8" data-d="1">65,8</span>%</b><small>do caixa em só 3 clientes: risco que encontrei</small></div>
-        <div class="kpi"><b data-n="9">9</b><small>projetos no GitHub: 4 de dados e 5 web</small></div>
+        <div class="kpi"><b data-n="10">10</b><small>projetos no GitHub: 5 de dados e 5 web</small></div>
       </div>
       <figure class="blue" aria-label="Desenho que mostra uma fachada de prédios em planta técnica virando um gráfico de barras: da arquitetura aos dados">
         <svg id="bp" viewBox="0 0 420 310" role="img" aria-label="Da planta ao gráfico">
@@ -497,12 +497,24 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
       <button type="button" class="spark" data-k="3" style="right:3%;top:40px" aria-label="Insight escondido" data-msg="Na Aurora, 3 clientes respondem por 65,8% dos R$ 4,2 milhões recebidos. É risco de concentração."></button>
       <h2>Trabalhos selecionados</h2>
       <ol class="pindex" aria-label="Índice de projetos">
-        <li><a href="#p1" data-img="assets/boto-preview.png"><span class="ln">01</span><span class="nm">Boto Café</span><span class="tg">RFM</span></a></li>
-        <li><a href="#p2" data-img="assets/agro-preview.png"><span class="ln">02</span><span class="nm">Agro no Pará</span><span class="tg">IBGE</span></a></li>
-        <li><a href="#p3" data-img="assets/zoop-preview.png"><span class="ln">03</span><span class="nm">Zoop Megastore</span><span class="tg">Power BI</span></a></li>
-        <li><a href="#p4" data-img="assets/aurora-preview.png"><span class="ln">04</span><span class="nm">Distribuidora Aurora</span><span class="tg">Dashboard</span></a></li>
+        <li><a href="#p5" data-img="assets/rais-preview.png"><span class="ln">01</span><span class="nm">Emprego formal no Pará</span><span class="tg">dbt</span></a></li>
+        <li><a href="#p1" data-img="assets/boto-preview.png"><span class="ln">02</span><span class="nm">Boto Café</span><span class="tg">RFM</span></a></li>
+        <li><a href="#p2" data-img="assets/agro-preview.png"><span class="ln">03</span><span class="nm">Agro no Pará</span><span class="tg">IBGE</span></a></li>
+        <li><a href="#p3" data-img="assets/zoop-preview.png"><span class="ln">04</span><span class="nm">Zoop Megastore</span><span class="tg">Power BI</span></a></li>
+        <li><a href="#p4" data-img="assets/aurora-preview.png"><span class="ln">05</span><span class="nm">Distribuidora Aurora</span><span class="tg">Dashboard</span></a></li>
       </ol>
       <div class="projects">
+        <article class="project" id="p5">
+          <div class="meta">2026 · BigQuery, dbt, Power BI
+            <img class="shot" src="assets/rais-preview.png" alt="Prévia do dashboard de emprego formal no Pará no Power BI" loading="lazy">
+          </div>
+          <div>
+            <h3>Emprego formal no Pará (RAIS): pipeline com dbt e BigQuery</h3>
+            <p><strong>Problema:</strong> entender como o emprego formal nos municípios do Pará evoluiu na última década, por setor e escolaridade, e onde o agro gerou mais vagas com carteira assinada.</p>
+            <p class="results"><strong>Resultado:</strong> o emprego formal subiu de 1,13 mi (2015) para 1,45 mi (2024) de vínculos. O agro tem 63 mil vínculos formais, mas o valor da produção agrícola cresceu muito mais que o emprego.</p>
+            <div class="links"><a href="https://lanybcr.github.io/rais-para-analytics/" target="_blank" rel="noopener">Ver projeto</a><a href="https://github.com/lanybcr/rais-para-analytics" target="_blank" rel="noopener">Código</a></div>
+          </div>
+        </article>
         <article class="project" id="p1">
           <div class="meta">2026 · Python, SQL, Streamlit, Power BI
             <img class="shot" src="assets/boto-preview.png" alt="Prévia do dashboard RFM do Boto Café" loading="lazy">
