@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alany Cruz — Analista de Dados e Desenvolvedora Web</title>
-<meta name="description" content="Transformo bases reais em dashboards claros para quem precisa tomar decisões. Python, Pandas e Power BI.">
+<meta name="description" content="Transformo bases de dados em dashboards claros para quem precisa tomar decisões. Python, Pandas e Power BI.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Alany Cruz — Analista de Dados">
-<meta property="og:description" content="Transformo bases reais em dashboards claros para quem precisa tomar decisões. Python, Pandas e Power BI.">
+<meta property="og:description" content="Transformo bases de dados em dashboards claros para quem precisa tomar decisões. Python, Pandas e Power BI.">
 <meta property="og:image" content="https://lanybcr.github.io/assets/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -180,17 +180,9 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top:
 .mini h3 { font-size: 1.05rem; margin-bottom: 6px; }
 .mini p { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
 .mini .links { display: flex; gap: 18px; font-weight: 600; font-size: 14px; }
-/* Mistura: loader, capítulos, ficha, insights, processo, terminal, dock */
+/* Mistura: capítulos, ficha, insights, terminal, dock */
 section .wrap { position: relative; }
-#loader { position: fixed; inset: 0; z-index: 200; background: var(--bg); display: flex; align-items: center; justify-content: center; transition: opacity .5s ease, visibility .5s; }
-#loader.out { opacity: 0; visibility: hidden; }
-.lbox { width: min(420px, 82vw); font-family: var(--mono); }
-.lt { color: var(--accent); margin: 0 0 14px; }
-.lbar { height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; }
-.lbar i { display: block; height: 100%; width: 0; background: var(--accent); }
-#skip { margin-top: 18px; background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 8px; padding: 6px 12px; font: 13px var(--mono); cursor: pointer; }
-#skip:hover { color: var(--text); border-color: var(--accent); }
-.eyebrow[data-ch]::before { content: "Prancha " attr(data-ch) " / 06  ·  "; color: var(--muted); font-family: var(--mono); letter-spacing: 0; }
+.eyebrow[data-ch]::before { content: "Prancha " attr(data-ch) " / 05  ·  "; color: var(--muted); font-family: var(--mono); letter-spacing: 0; }
 .status { margin: 28px 0 0; color: var(--muted); font-size: 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .status i { width: 9px; height: 9px; border-radius: 50%; background: #5ee0a0; animation: ping 2s infinite; }
 .status .hint { font-family: var(--mono); font-size: 13px; opacity: .8; }
@@ -214,11 +206,6 @@ section .wrap { position: relative; }
 .spark:hover, .spark:focus-visible { opacity: 1; }
 .spark.found { display: none; }
 @keyframes ping2 { 0% { box-shadow: 0 0 0 0 rgba(124,183,255,.5); } 70% { box-shadow: 0 0 0 14px rgba(124,183,255,0); } 100% { box-shadow: 0 0 0 0 rgba(124,183,255,0); } }
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
-.step { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; position: relative; overflow: hidden; }
-.step b { font: 700 2.2rem var(--mono); position: absolute; right: 16px; top: 8px; color: transparent; -webkit-text-stroke: 1px var(--accent); opacity: .6; }
-.step h3 { margin-bottom: 8px; color: var(--accent); }
-.step p { color: var(--muted); font-size: 15px; margin: 0; }
 .term { max-width: 560px; border: 1px solid var(--border); border-radius: 14px; background: #03070f; font-family: var(--mono); font-size: 14.5px; overflow: hidden; margin-top: 8px; }
 .tbar { display: flex; align-items: center; gap: 7px; padding: 10px 14px; border-bottom: 1px solid var(--border); background: var(--surface); }
 .tbar i { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
@@ -237,7 +224,6 @@ section .wrap { position: relative; }
 #toast.show { opacity: 1; transform: translate(-50%, 0); }
 footer { padding-bottom: 90px; }
 @media (max-width: 720px) { #dock a { padding: 8px 9px; font-size: 13px; } #dock .cnt { padding: 8px 8px; } .spark { opacity: .5; } }
-@media (prefers-reduced-motion: reduce) { #loader { display: none; } }
 /* Criatividade: planta que vira gráfico, cotas, quiz, Boto */
 .blue { margin: 0; position: absolute; right: 0; top: -6px; width: 360px; }
 .blue svg { width: 100%; display: block; overflow: visible; cursor: crosshair; }
@@ -286,7 +272,6 @@ section:not(.hero) h2.in::after { width: 120px; }
 .hero h1.split .wd { display: inline-block; white-space: nowrap; }
 .hero h1.split .ch { display: inline-block; animation: chIn .9s cubic-bezier(.2,.9,.25,1.15) both; animation-delay: calc(.35s + var(--i) * 45ms); transition: transform .25s ease, color .25s ease; }
 .hero h1.split .acc { color: var(--accent); }
-body:not(.ready) .hero h1.split .ch { animation-play-state: paused; }
 .hero h1.split .ch:hover { transform: translateY(-12px) rotate(-8deg); color: var(--pink) !important; text-shadow: 0 0 24px rgba(255,122,198,.6); }
 @keyframes chIn { from { opacity: 0; transform: translateY(70%) rotate(14deg) scale(.6); filter: blur(8px); } to { opacity: 1; transform: none; filter: none; } }
 h2 .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; }
@@ -301,13 +286,6 @@ h2.in .w > span { transform: none; }
 .mini img { clip-path: inset(100% 0 0 0); transition: clip-path .9s cubic-bezier(.7,0,.2,1) .2s; }
 .mini.in img { clip-path: inset(0 0 0 0); }
 .mini:nth-child(2) { transition-delay: .08s; } .mini:nth-child(3) { transition-delay: .16s; } .mini:nth-child(4) { transition-delay: .24s; } .mini:nth-child(5) { transition-delay: .32s; }
-.steps { position: relative; padding-top: 28px; }
-.steps::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 1.4s cubic-bezier(.7,0,.2,1) .2s; }
-.steps.in::before { transform: scaleX(1); }
-.steps::after { content: ""; position: absolute; top: 3px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent); opacity: 0; }
-.steps.in::after { animation: packet 3.4s linear 1.6s infinite; }
-@keyframes packet { 0% { left: 0; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { left: calc(100% - 9px); opacity: 0; } }
-.step:nth-child(2) { transition-delay: .15s; } .step:nth-child(3) { transition-delay: .3s; } .step:nth-child(4) { transition-delay: .45s; }
 .pframe { position: relative; width: fit-content; align-self: start; }
 .pframe .photo { margin-bottom: 0; }
 .pframe::before, .pframe::after { content: ""; position: absolute; width: 28px; height: 28px; border: 2px solid var(--accent); opacity: 0; transition: all .9s cubic-bezier(.2,.8,.2,1) .3s; pointer-events: none; }
@@ -320,7 +298,6 @@ h2.in .w > span { transform: none; }
 .rip { position: fixed; width: 80px; height: 80px; margin: -40px 0 0 -40px; border: 1.5px dashed var(--accent); border-radius: 50%; pointer-events: none; z-index: 98; animation: rip .8s ease-out forwards; }
 @keyframes rip { from { transform: scale(0); opacity: 1; } to { transform: scale(1.7); opacity: 0; } }
 .btn, #dock a { will-change: transform; }
-@media (max-width: 720px) { .steps::before, .steps::after { display: none; } .steps { padding-top: 0; } }
 @media (prefers-reduced-motion: reduce) { .project .shot, .mini img { clip-path: none; } h2 .w > span { transform: none; } }
 /* Cores: aurora */
 ::selection { background: rgba(255,122,198,.35); color: #fff; }
@@ -340,11 +317,8 @@ section:not(.hero) h2::after { border-left-color: var(--accent); border-right-co
 .eyebrow { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; width: fit-content; }
 .eyebrow[data-ch]::before { -webkit-text-fill-color: var(--muted); }
 .eyebrow.type { -webkit-text-fill-color: var(--accent); }
-.project:hover, .mini:hover, .step:hover, .card:hover { border-color: var(--violet); box-shadow: 0 14px 34px rgba(0,0,0,.4), 0 0 0 1px rgba(177,140,255,.25), 0 0 40px -10px rgba(255,122,198,.35); }
+.project:hover, .mini:hover, .card:hover { border-color: var(--violet); box-shadow: 0 14px 34px rgba(0,0,0,.4), 0 0 0 1px rgba(177,140,255,.25), 0 0 40px -10px rgba(255,122,198,.35); }
 .project .meta::after { background: var(--grad); box-shadow: 0 0 18px var(--pink); }
-.steps::before { background: var(--grad); }
-.steps::after { background: var(--pink); box-shadow: 0 0 14px var(--pink); }
-.step h3 { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; width: fit-content; }
 .pframe::after { border-color: var(--pink); }
 .rip { border-color: var(--pink); }
 .spark { background: var(--pink); }
@@ -415,14 +389,6 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
 </head>
 <body>
 
-<noscript><style>#loader{display:none}</style></noscript>
-<div id="loader" role="status" aria-label="Carregando">
-  <div class="lbox">
-    <p class="lt">&gt; carregando_dados <span id="lp">0</span>%</p>
-    <div class="lbar"><i id="lf"></i></div>
-    <button type="button" id="skip">Pular (Esc)</button>
-  </div>
-</div>
 <div id="progress" aria-hidden="true"></div>
 <header class="top">
   <div class="wrap">
@@ -445,7 +411,7 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
       <p class="eyebrow type" data-text="> analista_de_dados.run()">Analista de Dados</p>
       <h1>Alany Cruz</h1>
       <p class="role">Analista de dados <span>&amp;</span> desenvolvedora web</p>
-      <p class="lead">Transformo bases reais em dashboards claros para quem precisa tomar decisões.</p>
+      <p class="lead">Transformo bases de dados em dashboards claros para quem precisa tomar decisões.</p>
       <div class="actions">
         <a class="btn primary" href="#projetos">Ver projetos</a>
         <a class="btn" href="assets/curriculo-alany-cruz.pdf" download>Currículo</a>
@@ -454,8 +420,8 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
       </div>
       <div class="kpis">
         <div class="kpi"><b>R$ <span data-n="38.4" data-d="1">38,4</span> bi</b><small>em produção agrícola analisada (Pará, 2025)</small></div>
-        <div class="kpi"><b><span data-n="65.8" data-d="1">65,8</span>%</b><small>da receita em só 3 clientes: risco que encontrei</small></div>
-        <div class="kpi"><b data-n="9">9</b><small>projetos publicados: 4 de dados e 5 web</small></div>
+        <div class="kpi"><b><span data-n="65.8" data-d="1">65,8</span>%</b><small>do caixa em só 3 clientes: risco que encontrei</small></div>
+        <div class="kpi"><b data-n="9">9</b><small>projetos no GitHub: 4 de dados e 5 web</small></div>
       </div>
       <figure class="blue" aria-label="Desenho que mostra uma fachada de prédios em planta técnica virando um gráfico de barras: da arquitetura aos dados">
         <svg id="bp" viewBox="0 0 420 310" role="img" aria-label="Da planta ao gráfico">
@@ -497,7 +463,7 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
         <div>
           <p class="intro">Eu transformo planilhas bagunçadas em respostas claras, e depois coloco essas respostas no ar.</p>
           <p>Sou analista de dados e desenvolvedora web. Antes dos dados, me formei arquiteta e urbanista, e é de lá que vem o meu jeito de olhar um problema: entender o território, as pessoas e o que precisa ser decidido.</p>
-          <p>Desde 2023 faço parte da <a href="https://www.deflagra.com.br/" target="_blank" rel="noopener">Deflagra Tecnologia</a>, empresa de software de Belém (PA). Nos meus projetos, trato bases reais com Python, Pandas e SQL e documento cada ajuste, para que qualquer número possa ser conferido.</p>
+          <p>Desde 2023 sou desenvolvedora na <a href="https://www.deflagra.com.br/" target="_blank" rel="noopener">Deflagra Tecnologia</a>, empresa de software de Belém (PA). Nos meus projetos, trato bases de dados com Python, Pandas e SQL e documento cada ajuste, para que qualquer número possa ser conferido.</p>
           <p>Como também programo para a web, a análise não termina numa planilha: vira um painel que qualquer pessoa abre no navegador e entende de primeira. Foi o UX Design que me ensinou essa parte.</p>
         </div>
         <div class="pframe">
@@ -565,8 +531,9 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
           </div>
           <div>
             <h3>Zoop Megastore: vendas de e-commerce</h3>
-            <p><strong>Problema:</strong> transformar os dados brutos de vendas de um e-commerce em informação útil para a gestão.</p>
+            <p><strong>Problema:</strong> transformar os dados brutos de vendas de um e-commerce em informação útil para a gestão. Os dados são fictícios, do curso de Análise de Dados da Alura.</p>
             <p class="results"><strong>Resultado:</strong> do CSV ao dashboard estratégico, com R$ 810,8 mil de faturamento no trimestre analisado. Mostrou o plano Prime crescendo de cerca de R$ 28 mil em janeiro para R$ 98 mil em março.</p>
+            <p><strong>Recomendação:</strong> levar o ZOOP Prime para Santa Catarina, Goiás e Rio de Janeiro, que somam 45% do faturamento e têm poucos assinantes, com ofertas em Periféricos, a categoria líder.</p>
             <div class="links"><a href="https://github.com/lanybcr/zoop-megastore-analise/blob/main/powerbi/zoop_megastore_dashboard.pdf" target="_blank" rel="noopener">Ver dashboard (PDF)</a><a href="https://github.com/lanybcr/zoop-megastore-analise" target="_blank" rel="noopener">Código</a></div>
           </div>
         </article>
@@ -578,7 +545,8 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
             <h3>Dashboard Distribuidora Aurora</h3>
             <p><strong>Problema:</strong> controlar e analisar os recebimentos do 1º semestre de 2026 de uma distribuidora, a partir de planilhas e comprovantes dispersos.</p>
             <p class="results"><strong>Resultado:</strong> painel interativo com filtros por região e categoria. Mostrou R$ 4,2 milhões recebidos, com 3 clientes respondendo por 65,8% do total, um risco de concentração para a empresa.</p>
-            <div class="links"><a href="https://github.com/lanybcr/Dashboard-Distribuidora-Aurora" target="_blank" rel="noopener">Código</a></div>
+            <p><strong>Recomendação:</strong> um plano de retenção dedicado a esses 3 clientes, porque eles são o maior risco do caixa hoje.</p>
+            <div class="links"><a href="https://lanybcr.github.io/Dashboard-Distribuidora-Aurora/Painel_Aurora.html" target="_blank" rel="noopener">Ver projeto</a><a href="https://github.com/lanybcr/Dashboard-Distribuidora-Aurora" target="_blank" rel="noopener">Código</a></div>
           </div>
         </article>
       </div>
@@ -588,6 +556,7 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
   <section id="estudos">
     <div class="wrap">
       <p class="eyebrow" data-ch="03">Mais no GitHub</p>
+      <button type="button" class="spark" data-k="2" style="right:4%;top:30px" aria-label="Insight escondido" data-msg="Agro no Pará: a preços de 2025 (IPCA), o valor da produção foi de R$ 15,4 bi para R$ 38,4 bi."></button>
       <h2>Projetos de estudo em desenvolvimento web</h2>
       <div class="minis">
         <article class="mini">
@@ -625,23 +594,9 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
     </div>
   </section>
 
-  <section id="processo">
-    <div class="wrap">
-      <p class="eyebrow" data-ch="04">Como eu trabalho</p>
-      <button type="button" class="spark" data-k="2" style="right:6%;top:30px" aria-label="Insight escondido" data-msg="Agro no Pará: a preços de 2025 (IPCA), o valor da produção foi de R$ 15,4 bi para R$ 38,4 bi."></button>
-      <h2>Do dado bruto à decisão</h2>
-      <div class="steps">
-        <div class="step"><b>01</b><h3>Entender</h3><p>Começo pela pergunta de negócio: quem vai decidir e o que precisa saber.</p></div>
-        <div class="step"><b>02</b><h3>Tratar</h3><p>Limpo e valido a base, e deixo registrado tudo o que removi ou ajustei.</p></div>
-        <div class="step"><b>03</b><h3>Analisar</h3><p>Python, Pandas e SQL para achar padrões, riscos e oportunidades.</p></div>
-        <div class="step"><b>04</b><h3>Entregar</h3><p>Dashboard claro, que quem decide entende sem precisar de explicação.</p></div>
-      </div>
-    </div>
-  </section>
-
   <section id="formacao">
     <div class="wrap">
-      <p class="eyebrow" data-ch="05">Experiência e formação</p>
+      <p class="eyebrow" data-ch="04">Experiência e formação</p>
       <button type="button" class="spark" data-k="4" style="right:6%;top:30px" aria-label="Insight escondido" data-msg="No Boto Café, 30,3% dos clientes estão em risco de abandono (dados fictícios, feitos para estudo)."></button>
       <h2>Trajetória</h2>
       <ul class="timeline">
@@ -667,13 +622,13 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
 
   <section id="contato" class="contact">
     <div class="wrap">
-      <p class="eyebrow" data-ch="06">Contato</p>
+      <p class="eyebrow" data-ch="05">Contato</p>
       <h2>Vamos conversar</h2>
-      <p>Tem um projeto, uma vaga ou uma ideia? Me escreva e respondo o mais rápido possível.</p>
+      <p>Tem um projeto ou uma ideia? Me escreva e respondo o mais rápido possível.</p>
       <div class="term">
         <div class="tbar"><i></i><i></i><i></i><span>guest@alany ~</span></div>
         <p class="tl"><span class="pr">$</span> contatos --listar</p>
-        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=lanybcr@gmail.com&amp;su=Contato%20pelo%20portf%C3%B3lio&amp;body=Ol%C3%A1%2C%20Alany!%20Quero%20te%20contratar%20pelos%20seus%20servi%C3%A7os%2C%20estou%20te%20mandando%20este%20e-mail%20para%20" target="_blank" rel="noopener"><span class="pr">&gt;</span> e-mail <em>lanybcr@gmail.com · a mensagem já vai escrita</em></a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=lanybcr@gmail.com&amp;su=Contato%20pelo%20portf%C3%B3lio&amp;body=Ol%C3%A1%2C%20Alany!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20" target="_blank" rel="noopener"><span class="pr">&gt;</span> e-mail <em>lanybcr@gmail.com · a mensagem já vai escrita</em></a>
         <a href="https://www.linkedin.com/in/alany-cruz-1a3837191" target="_blank" rel="noopener"><span class="pr">&gt;</span> linkedin <em>/in/alany-cruz</em></a>
         <a href="https://github.com/lanybcr" target="_blank" rel="noopener"><span class="pr">&gt;</span> github <em>/lanybcr</em></a>
         <a href="assets/curriculo-alany-cruz.pdf" download><span class="pr">&gt;</span> curriculo <em>versão em português (PDF)</em></a>
@@ -809,7 +764,7 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
 
   // Cards inclinam e brilham; cursor com anel
   if (fine) {
-    document.querySelectorAll('.card, .project, .mini, .step, .pframe').forEach(function (k) {
+    document.querySelectorAll('.card, .project, .mini, .pframe').forEach(function (k) {
       var deg = k.classList.contains('project') ? 3 : 8;
       k.addEventListener('mousemove', function (e) {
         var r = k.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
@@ -825,28 +780,6 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
       el.addEventListener('mouseenter', function () { cu.classList.add('big'); });
       el.addEventListener('mouseleave', function () { cu.classList.remove('big'); });
     });
-  }
-
-
-  // Tela de carregamento
-  var ld = document.getElementById('loader');
-  if (ld) {
-    var seen = false; try { seen = sessionStorage.getItem('ld') === '1'; } catch (e) {}
-    var closeLd = function () { ld.classList.add('out'); document.body.classList.add('ready'); try { sessionStorage.setItem('ld', '1'); } catch (e) {} };
-    if (reduce || seen) { ld.style.display = 'none'; document.body.classList.add('ready'); }
-    else {
-      var lp = document.getElementById('lp'), lf = document.getElementById('lf'), lt0 = performance.now(), ldone = false;
-      (function st(t) {
-        if (ldone) return;
-        var k = Math.min(1, (t - lt0) / 1300);
-        lp.textContent = Math.round(k * 100); lf.style.width = k * 100 + '%';
-        if (k < 1) requestAnimationFrame(st); else setTimeout(closeLd, 200);
-      })(lt0);
-      var skipLd = function () { ldone = true; closeLd(); };
-      document.getElementById('skip').addEventListener('click', skipLd);
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') skipLd(); });
-      setTimeout(skipLd, 4000);
-    }
   }
 
 
@@ -950,7 +883,7 @@ section:not(.hero) h2:hover { text-shadow: -2px 0 rgba(255,122,198,.7), 2px 0 rg
     });
   });
 
-  var els = document.querySelectorAll('section:not(.hero) .wrap > *:not(.spark), .card, .project, .mini, .step, .timeline li');
+  var els = document.querySelectorAll('section:not(.hero) .wrap > *:not(.spark), .card, .project, .mini, .timeline li');
   if (!('IntersectionObserver' in window)) return;
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
